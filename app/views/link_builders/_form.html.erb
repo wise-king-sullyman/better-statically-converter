@@ -1,0 +1,27 @@
+<%= form_with(model: link_builder) do |form| %>
+  <% if link_builder.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(link_builder.errors.count, "error") %> prohibited this link_builder from being saved:</h2>
+
+      <ul>
+        <% link_builder.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :commit %>
+    <%= form.text_field :commit %>
+  </div>
+
+  <div class="field">
+    <%= form.label :file %>
+    <%= form.text_field :file %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit 'Create Link' %>
+  </div>
+<% end %>
