@@ -2,7 +2,7 @@
 
 <p>
   <strong>Use this link:</strong>
-  https://cdn.statically.io/gh/TheOdinProject/curriculum/<%= @link_builder.commit %>/<%= @link_builder.file %>
+  <%= @link_builder.build_link(@link_builder.commit, @link_builder.file) %>
 </p>
 
 <%= link_to 'Make a new link', new_link_builder_path %>
