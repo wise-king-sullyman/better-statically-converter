@@ -1,8 +1,7 @@
 class LinkBuilder < ApplicationRecord
   validates :commit, presence: true
-  validates :file, presence: true
 
-  def build_link(commit, _file)
+  def build_link(commit)
     commit_info = parse_github_url(commit)
     raw_files = get_commit_files(structure_request_url(commit_info))
     parse_raw_files(raw_files).map { |filepath| structure_statically_link(commit_info, filepath) }

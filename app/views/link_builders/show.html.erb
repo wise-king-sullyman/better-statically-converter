@@ -4,7 +4,7 @@
   <strong>Use these links in production:</strong>
 </p>
 <div> 
-  <% @link_builder.build_link(@link_builder.commit, @link_builder.file).each do |link| %>
+  <% @link_builder.build_link(@link_builder.commit).each do |link| %>
     <div><%= link %></div>
   <% end %>
 </div>
