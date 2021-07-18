@@ -1,5 +1,5 @@
 body {
-  background-color: #333;
+  background-color: #1a1a1a;
   color: #fff;
 
   box-sizing: border-box;
@@ -8,8 +8,8 @@ body {
   inset: 0;
   
   display: grid;
-  grid-template-columns: 20% 60% 20%;
-  grid-template-rows: 30% 40% 30%;
+  grid-template-columns: 5% 90% 5%;
+  grid-template-rows: 10% 80% 10%;
   justify-items: center;
   justify-content: center;
 }

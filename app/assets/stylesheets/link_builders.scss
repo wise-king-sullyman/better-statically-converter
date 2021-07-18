@@ -1,3 +1,48 @@
 // Place all the styles related to the LinkBuilders controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.new-view {
+  height: 100%;
+}
+
+.new-view, .new-view form, .new-view .field {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.new-view .field {
+  height: 100px;
+}
+
+.new-view .field label {
+  font-size: 36px;
+  margin: -30px 0 30px 0;
+}
+
+.new-view .field input {
+  width: 800px;
+  height: 30px;
+  margin-left: 20px;
+  padding-left: 5px;
+
+  font-size: 16px;
+
+  border: 2px solid #cc9543;
+  border-radius: 10px;
+
+  background-color: #121212;
+  color: white;
+}
+
+.new-view .actions input {
+  width: 200px;
+  height: 40px;
+  font-size: 20px;
+
+  background-color: #cc9543;
+
+  border: none;
+  border-radius: 5px;
+}

@@ -12,11 +12,11 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :commit %>
-    <%= form.text_field :commit %>
+    <%= form.label :commit, "Merge Commit Link:" %>
+    <%= form.text_field :commit, placeholder: "https://github.com/owner/repo/commit/commit_hash" %>
   </div>
 
   <div class="actions">
-    <%= form.submit 'Create Link' %>
+    <%= form.submit 'Create Image Links!' %>
   </div>
 <% end %>
