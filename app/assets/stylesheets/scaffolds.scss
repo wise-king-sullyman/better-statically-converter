@@ -1,7 +1,18 @@
 body {
-  background-color: #fff;
-  color: #333;
-  margin: 33px; }
+  background-color: #333;
+  color: #fff;
+
+  box-sizing: border-box;
+  
+  position: absolute;
+  inset: 0;
+  
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+  grid-template-rows: 30% 40% 30%;
+  justify-items: center;
+  justify-content: center;
+}
 
 body, p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
@@ -63,3 +74,10 @@ div.actions {
 
 label {
   display: block; }
+
+.main {
+  grid-area: 2 / 2;
+  
+  height: 100%;
+  width: 100%;
+}
