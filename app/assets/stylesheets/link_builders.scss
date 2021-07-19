@@ -73,10 +73,12 @@
   border-radius: 10px;
 }
 
-.show-view a {
+.show-view a, .show-view a:visited {
   font-size: 30px;
 
   border-radius: 5px;
   padding: 20px;
   margin: 40px;
+
+  color: white;
 }
