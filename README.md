@@ -1,24 +1,9 @@
-# README
+# Better Statically Converter
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A (better) link converter for the Statically CDN
 
-Things you may want to cover:
+Rather than having to manually input each image link individually, this application takes a the link to a commit on GitHub and generates a properly formatted Statically CDN link for each file in that commit
 
-* Ruby version
+Find this app live at https://intelligent-vin-71482.herokuapp.com/
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Find the Statically CDN at https://statically.io/
