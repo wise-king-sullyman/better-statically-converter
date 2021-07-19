@@ -23,5 +23,5 @@ test:
 production:
   <<: *default
   database: db/production
-  username: odin
-  password: <%= ENV['MYAPP_DATABASE_PASSWORD'] %>
+  username: <%= ENV['DB_USERNAME'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
