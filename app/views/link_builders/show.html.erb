@@ -9,6 +9,25 @@
       <div class='link'><%= link %></div>
     <% end %>
   </div>
+  <script>
+    document.querySelector('.link-container').addEventListener('click', async event => {
+      let links = document.querySelectorAll('.link');
+      for (const link of links) {
+        if (!navigator.clipboard) {
+          // Clipboard API not available
+          return;
+        }
+        const text = event.target.innerText;
+        try {
+          await navigator.clipboard.writeText(text);
+          //event.target.textContent = 'Copied to clipboard'
+        } catch (err) {
+          console.error('Failed to copy!', err);
+        }
+      }
+    }
+  );
+    </script>
 
   <%= link_to 'Make a new link', new_link_builder_path %>
 </div>
