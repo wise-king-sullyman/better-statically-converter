@@ -1,31 +1,34 @@
 <div class="show-view">
   <p id="notice"><%= notice %></p>
-
   <p>
     <strong>Use these links in production:</strong>
   </p>
+  <p>
+    (Click a link to copy it to your clipboard)
+  </p>
+  <p style="color: green;"id="foo"></p>
   <div class='link-container'> 
     <% @link_builder.build_link(@link_builder.commit).each do |link| %>
       <div class='link'><%= link %></div>
     <% end %>
   </div>
   <script>
-    document.querySelector('.link-container').addEventListener('click', async event => {
-      let links = document.querySelectorAll('.link');
+    let ptag = document.querySelector('#foo');
+    let links = document.querySelectorAll('.link');
       links.forEach(element => {
         element.addEventListener('click', async event => {
-        if (!navigator.clipboard) {
-          // Clipboard API not available
-          return;
-        }
-
-        const text = event.target.innerText;
-        try {
-          await navigator.clipboard.writeText(text);
-          //event.target.textContent = 'Copied to clipboard'
-        } catch (err) {
-          console.error('Failed to copy!', err);
-        }
+          if (!navigator.clipboard) {
+            // Clipboard API not available
+            return;
+          }
+          const text = event.target.innerText;
+          try {
+            await navigator.clipboard.writeText(text);
+            //event.target.textContent = 'Copied to clipboard'
+            ptag.innerText = `Link copied: ${text}`;
+          } catch (err) {
+            console.error('Failed to copy!', err);
+          }
         })
       });
     </script>
