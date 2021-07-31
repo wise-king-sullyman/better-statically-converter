@@ -4,7 +4,10 @@ class LinkBuilder < ApplicationRecord
   def build_link(commit)
     commit_info = parse_github_url(commit)
     raw_files = get_commit_files(structure_request_url(commit_info))
-    parse_raw_files(raw_files).map { |filepath| structure_statically_link(commit_info, filepath) }
+    formatted_links = parse_raw_files(raw_files).map do |filepath|
+      structure_statically_link(commit_info, filepath)
+    end
+    formatted_links.empty? ? ['Error: check commit link'] : formatted_links
   end
 
   CommitInformation = Struct.new(:owner, :repo, :commit_hash)
@@ -29,7 +32,11 @@ class LinkBuilder < ApplicationRecord
   end
 
   def parse_raw_files(files)
-    files.map { |file| file['filename'] }
+    begin
+      files.map { |file| file['filename'] }
+    rescue NoMethodError
+      []
+    end
   end
 
   def structure_statically_link(info, filepath)
